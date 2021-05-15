@@ -8,11 +8,11 @@ namespace IMC2
         {
             double a;
             double b;
-            string sair;
+            string sair = "";
 
             BoasVindas();
 
-            do
+            while (sair == "N" || sair != "S")
             {
                 comanda("- Digite peso (kg): ");
                 a = pesoAltura(Console.ReadLine());
@@ -22,13 +22,14 @@ namespace IMC2
 
                 Console.WriteLine($"IMC: {resul(a, b):N3} kg/m²", "/n");
 
+
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.Write("Sair? ('S' para SIM, 'qualquer tecla' para não.): ");
                 Console.ResetColor();
                 sair = Console.ReadLine().ToUpper();
                 comanda("--------------");
 
-            } while (sair != "S");
+            }
 
             Console.WriteLine();
             Console.WriteLine("Obrigado!");
